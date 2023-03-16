@@ -152,7 +152,7 @@ getAnime('naruto')
 - [] Search bar functionality is fleshed out.
 - [] User comments on other users' reviews are implemented.
 
-### Goals
+### GOALS:
 
 - [] Day 1: Get the project off the ground: proposal, notion, repo, etc.
 - [] Day 2: Authentication/flesh out backend.
