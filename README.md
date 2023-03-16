@@ -4,6 +4,58 @@
 Ever mindlessly scroll through an anime website, conflicted by what you should spend your time on? Of course you have, you're time is valuable and it should be spent wisely. With this application, users, much like the first pioneers of unexplored lands, who have just watched an anime can make a review, comment and rating, and post it. Users' review lists will be displayed on the homepage and they'll also be able to navigate to a page that aggregates everyone's reviews. These reviews will give insights to which animes are worth your time. 
 
 ## API:
+The API used for this project: https://gogoanime.consumet.stream/search
+
+## API SNIPPET:
+GET https://gogoanime.consumet.stream/search?keyw={animeName}
+
+
+``` json 
+[
+  {
+  animeId: "naruto",
+  animeTitle: "Naruto",
+  animeUrl: "https://gogoanime.film///category/naruto",
+  animeImg: "https://gogocdn.net/images/anime/N/naruto.jpg",
+  status: "Released: 2002"
+  },
+  {
+  animeId: "naruto-dub",
+  animeTitle: "Naruto (Dub)",
+  animeUrl: "https://gogoanime.film///category/naruto-dub",
+  animeImg: "https://gogocdn.net/cover/naruto-dub.png",
+  status: "Released: 2002"
+  },
+  {
+  animeId: "naruto-shippuden",
+  animeTitle: "Naruto Shippuden",
+  animeUrl: "https://gogoanime.film///category/naruto-shippuden",
+  animeImg: "https://gogocdn.net/images/anime/naruto_shippuden.jpg",
+  status: "Released: 2007"
+  },
+  {
+  animeId: "naruto-shippuuden-dub",
+  animeTitle: "Naruto Shippuden (Dub)",
+  animeUrl: "https://gogoanime.film///category/naruto-shippuuden-dub",
+  animeImg: "https://gogocdn.net/cover/naruto-shippuuden-dub.png",
+  status: "Released: 2007"
+  }
+]
+```
+
+## API CODE: 
+
+``` js
+async function getAnime(animeName) { 
+  const res = await fetch('ttps://gogoanime.consumet.stream/search?keyw={animeName}');
+  const json = res.json();
+  console.log(json);
+}
+
+// E.g.
+
+getAnime('naruto')
+```
 
 
 ## WIREFRAMES: 
