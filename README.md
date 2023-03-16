@@ -3,8 +3,20 @@
 ## APP DESCRIPTION:
 Ever mindlessly scroll through an anime website, conflicted by what you should spend your time on? Of course you have, you're time is valuable and it should be spent wisely. With this application, users, much like the first pioneers of unexplored lands, who have just watched an anime can make a review, comment and rating, and post it. Users' review lists will be displayed on the homepage and they'll also be able to navigate to a page that aggregates everyone's reviews. These reviews will give insights to which animes are worth your time. 
 
+## API:
+
+
 ## WIREFRAMES: 
 
+![IMG_1498](https://user-images.githubusercontent.com/114048369/225667180-f3e592a5-f85e-40b6-bb1e-cf83ae190dc5.jpeg)
+
+![IMG_1499](https://user-images.githubusercontent.com/114048369/225667320-8a0c1d49-c13c-42b5-8128-8d39042eb90f.jpeg)
+
+![IMG_1500](https://user-images.githubusercontent.com/114048369/225667361-b97d20dc-821b-4b7b-97cd-559b6cde2c16.jpeg)
+
+![IMG_1501](https://user-images.githubusercontent.com/114048369/225667399-65861389-4391-46a6-9a48-883ce6a4758a.jpeg)
+
+![IMG_1502](https://user-images.githubusercontent.com/114048369/225667480-12cc818d-a5a0-4a95-a9f8-50f15c15769a.jpeg)
 
 ## MVP:
 ### Planning <!-- omit in toc -->
@@ -52,7 +64,7 @@ Ever mindlessly scroll through an anime website, conflicted by what you should s
 ### Deployment <!-- omit in toc -->
 
 - Deploy the fully functional front-end via Vercel.
-- Deploy the back-end via [Heroku](https://www.heroku.com) (or vercel).
+- Deploy the back-end via Vercel.
 - Deploy the MongoDB database on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
 ### Procedural <!-- omit in toc -->
