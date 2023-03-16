@@ -57,6 +57,22 @@ async function getAnime(animeName) {
 getAnime('naruto')
 ```
 
+## DATA MODEL:
+
+![grubbSchema](https://user-images.githubusercontent.com/114048369/225715586-b04245de-502b-4bfe-8f44-65b554c4addc.png)
+
+
+## ROUTING TABLE:
+
+| Route                | HTTP Method | DB Action | Description             |
+| -----------          | ----------- | --------- | ----------------------- |
+| /api/                | GET         | INDEX     | Indexes all reviews     |
+| /api/profile         | GET         | INDEX     | Indexes your reviews    |
+| /api/                | POST        | CREATE    | Create a review         |
+| /api/:anime          | GET         | SHOW      | Shows the anime reviews |
+| /api/profile/:anime  | PUT         | UPDATE    | Update a review         |
+| /api/delete          | DELETE      | DELETE    | Delete a review         |
+
 
 ## WIREFRAMES: 
 
