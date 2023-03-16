@@ -162,8 +162,8 @@ getAnime('naruto')
 - [] Day 6: Formatting CSS (Cont.) & Post-MVP.
 - [] Day 7: Finalizing details (Git, Github, Vercel).
 
-### NOTION & TEAM EXPECTATIONS:
+### TEAM COLLABORATION DETAILS:
 
 * Notion Board: https://www.notion.so/invite/ac3f550bcdfe5281f20f28c717a540f3014bcf84
 * Team Expectations: https://docs.google.com/document/d/1LAV8PqCGaCTmK-rNXKz21HYIXeFoeuQNztlgxAH-2w8/edit?usp=sharing
-
+* Team Theme Song: https://open.spotify.com/track/78ZzF9pK3foniEnK64XzX5?si=Fxwua-gqRIu6rm63z03KNw
