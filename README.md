@@ -1,7 +1,7 @@
 # Animestagram
 
 ## APP DESCRIPTION:
-Ever mindlessly scroll through an anime website, conflicted by what you should spend your time on? Of course you have, you're time is valuable and it should be spent wisely. With this application, users, much like the first pioneers of unexplored lands, who have just watched an anime can make a review, comment and rating, and post it. Users' review lists will be displayed on the homepage and they'll also be able to navigate to a page that aggregates everyone's reviews. These reviews will give insights to which animes are worth your time. 
+Ever mindlessly scroll through an anime website conflicted by what you should spend your time on? Of course you have! Your time is valuable and it should be spent wisely. With this application users, much like the first pioneers of unexplored lands, who have just watched an anime can make a review, comment, and rating and post it. Users' review lists will be displayed on their profile page and they'll also be able to navigate to a page that aggregates everyone's reviews. These reviews will give insights to which animes are worth your time. 
 
 ## API:
 The API used for this project: https://gogoanime.consumet.stream/search
