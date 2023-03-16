@@ -13,32 +13,32 @@ GET https://gogoanime.consumet.stream/search?keyw={animeName}
 ``` json 
 [
   {
-  animeId: "naruto",
-  animeTitle: "Naruto",
-  animeUrl: "https://gogoanime.film///category/naruto",
-  animeImg: "https://gogocdn.net/images/anime/N/naruto.jpg",
-  status: "Released: 2002"
+  "animeId": "naruto",
+  "animeTitle": "Naruto",
+  "animeUrl": "https://gogoanime.film///category/naruto",
+  "animeImg": "https://gogocdn.net/images/anime/N/naruto.jpg",
+  "status": "Released: 2002"
   },
   {
-  animeId: "naruto-dub",
-  animeTitle: "Naruto (Dub)",
-  animeUrl: "https://gogoanime.film///category/naruto-dub",
-  animeImg: "https://gogocdn.net/cover/naruto-dub.png",
-  status: "Released: 2002"
+  "animeId": "naruto-dub",
+  "animeTitle": "Naruto (Dub)",
+  "animeUrl": "https://gogoanime.film///category/naruto-dub",
+  "animeImg": "https://gogocdn.net/cover/naruto-dub.png",
+  "status": "Released: 2002"
   },
   {
-  animeId: "naruto-shippuden",
-  animeTitle: "Naruto Shippuden",
-  animeUrl: "https://gogoanime.film///category/naruto-shippuden",
-  animeImg: "https://gogocdn.net/images/anime/naruto_shippuden.jpg",
-  status: "Released: 2007"
+  "animeId": "naruto-shippuden",
+  "animeTitle": "Naruto Shippuden",
+  "animeUrl": "https://gogoanime.film///category/naruto-shippuden",
+  "animeImg": "https://gogocdn.net/images/anime/naruto_shippuden.jpg",
+  "status": "Released: 2007"
   },
   {
-  animeId: "naruto-shippuuden-dub",
-  animeTitle: "Naruto Shippuden (Dub)",
-  animeUrl: "https://gogoanime.film///category/naruto-shippuuden-dub",
-  animeImg: "https://gogocdn.net/cover/naruto-shippuuden-dub.png",
-  status: "Released: 2007"
+  "animeId": "naruto-shippuuden-dub",
+  "animeTitle": "Naruto Shippuden (Dub)",
+  "animeUrl": "https://gogoanime.film///category/naruto-shippuuden-dub",
+  "animeImg": "https://gogocdn.net/cover/naruto-shippuuden-dub.png",
+  "status": "Released: 2007"
   }
 ]
 ```
@@ -59,7 +59,12 @@ getAnime('naruto')
 
 ## DATA MODEL:
 
-![grubbSchema](https://user-images.githubusercontent.com/114048369/225715586-b04245de-502b-4bfe-8f44-65b554c4addc.png)
+![image](https://user-images.githubusercontent.com/114048369/225740637-a3ca971b-9f12-4236-8fca-00117f6925ff.png)
+
+
+## COMPONENT TREE:
+
+![image](https://user-images.githubusercontent.com/114048369/225740800-3abe4a8e-88df-4b5d-a155-d34eaf3168dc.png)
 
 
 ## ROUTING TABLE:
@@ -76,15 +81,12 @@ getAnime('naruto')
 
 ## WIREFRAMES: 
 
-![IMG_1498](https://user-images.githubusercontent.com/114048369/225667180-f3e592a5-f85e-40b6-bb1e-cf83ae190dc5.jpeg)
+<img width="997" alt="Screenshot 2023-03-16 at 4 03 55 PM" src="https://user-images.githubusercontent.com/114048369/225740402-aea6a81d-d4c1-4982-8187-e4cfefc95680.png">
 
-![IMG_1499](https://user-images.githubusercontent.com/114048369/225667320-8a0c1d49-c13c-42b5-8128-8d39042eb90f.jpeg)
+<img width="1200" alt="Screenshot 2023-03-16 at 3 49 14 PM" src="https://user-images.githubusercontent.com/114048369/225740521-d19d7f0a-53aa-48e4-be13-585b19430bba.png">
 
-![IMG_1500](https://user-images.githubusercontent.com/114048369/225667361-b97d20dc-821b-4b7b-97cd-559b6cde2c16.jpeg)
+<img width="997" alt="Screenshot 2023-03-16 at 3 50 36 PM" src="https://user-images.githubusercontent.com/114048369/225740545-2572bbb6-3691-4571-8671-3186d2cc8b72.png">
 
-![IMG_1501](https://user-images.githubusercontent.com/114048369/225667399-65861389-4391-46a6-9a48-883ce6a4758a.jpeg)
-
-![IMG_1502](https://user-images.githubusercontent.com/114048369/225667480-12cc818d-a5a0-4a95-a9f8-50f15c15769a.jpeg)
 
 ## MVP:
 ### Planning <!-- omit in toc -->
