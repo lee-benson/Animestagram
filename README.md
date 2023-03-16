@@ -124,3 +124,25 @@ getAnime('naruto')
 - Have _frequent_ commits from _every_ team member dating back to the _very beginning_ of the project. These commits should total to or exceed _50_.
 - Use _effective_ and _safe_ branching and merging processes.
 
+### MVP Components
+
+- [] Navigation bar which has a homepage, profile page, and search bar (search bar interface).
+- [] Component that displays username, anime title, and rating. Below the image, comment, and other users' comments are rendered. 
+- [] On the profile page, there is a sticky footer with the functionality of making a new post. 
+- [] On the profile page, the component which displays the review also has an editing/deleting component.
+- [] Routes/links to the aforementioned components.
+
+### POST MVP: 
+- [] Search bar functionality is fleshed out.
+- [] User comments on other users' reviews are implemented.
+
+### Goals
+
+- [] Day 1: Get the project off the ground: proposal, notion, repo, etc.
+- [] Day 2: Authentication/flesh out backend.
+- [] Day 3: Developing components (NavBar & Post).
+- [] Day 4: Developing components (New Post & Edit/Delete).
+- [] Day 5: Formatting CSS.
+- [] Day 6: Formatting CSS (Cont.) & Post-MVP.
+- [] Day 7: Finalizing details (Git, Github, Vercel).
+
