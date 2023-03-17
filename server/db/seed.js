@@ -18,7 +18,7 @@ await Post.insertMany([{
   date: new Date(),
   username: myself.id,
   poster: "86",
-  title: "86",
+  title: "https://gogocdn.net/cover/86.png",
   rating: 5,
 }])
 
