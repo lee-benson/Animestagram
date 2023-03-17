@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import './db/connections.js'
+import './db/connection.js'
 import express from 'express'
 import morgan from 'morgan'
 import postRouter from './routes/posts.js'

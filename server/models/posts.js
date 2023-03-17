@@ -1,12 +1,20 @@
 import mongoose from "mongoose";
+
 // import { userSchema } from "./users.js";
 
 const postSchema = new mongoose.Schema({
-  author: {
+  username: {
     ref: 'User',
     type: mongoose.Schema.Types.ObjectId,
   },
-  text: String,
+  title: { type: mongoose.Schema.Types.String, ref: "Anime" },
+  poster: { type: mongoose.Schema.Types.String, ref: "Anime" },
+  rating: {
+    type: "number",
+    "minimum": 0,
+    "maximum": 5
+  },
+  comment: String,
   date: Date,
 })
 
