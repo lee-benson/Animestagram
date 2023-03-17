@@ -16,21 +16,21 @@ const myself = await User.create({
 await Post.insertMany([{
   comment: "I love you Handler One",
   date: new Date(),
-  username: myself.id,
-  poster: "86",
-  title: "https://gogocdn.net/cover/86.png",
+  userID: myself.id,
+  title: "86",
+  poster: "https://gogocdn.net/cover/86.png",
   rating: 5,
 }])
+await Post.insertMany([{
+  comment: "TLDW",
+  date: new Date(),
+  userID: myself.id,
+  title: "One Piece",
+  poster: "https://gogocdn.net/images/anime/One-piece.jpg",
+  rating: 1,
+}])
 
-// animeSchema.statics.findByKeyword = async function (keyword) {
-//   const url = `https://gogoanime.consumet.stream/search?keyw=${keyword}`;
-//   const response = await fetch(url);
-//   const data = await response.json();
-//   const anime = new this({
-//     title: data.animeTitle,
-//     poster: data.animeImg
-//   });
-// }
+
 
 
 await mongoose.disconnect()
