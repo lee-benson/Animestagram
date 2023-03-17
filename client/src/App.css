@@ -1,0 +1,10 @@
+@media only screen and (max-width: 767px) {
+
+  /* styles to apply when screen width is less than or equal to 767px */
+  body {
+    transform: scale(0.8);
+    /* scale down the entire page by 80% */
+    transform-origin: top center;
+    /* set the scaling origin to the top center */
+  }
+}
