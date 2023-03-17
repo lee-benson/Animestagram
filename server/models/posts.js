@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 // import { userSchema } from "./users.js";
 
 const postSchema = new mongoose.Schema({
-  username: {
+  userID: {
     ref: 'User',
     type: mongoose.Schema.Types.ObjectId,
   },
-  title: { type: mongoose.Schema.Types.String, ref: "Anime" },
-  poster: { type: mongoose.Schema.Types.String, ref: "Anime" },
+  title: String,
+  poster: String,
   rating: {
     type: "number",
     "minimum": 0,
