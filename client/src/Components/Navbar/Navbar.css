@@ -1,8 +1,84 @@
+body {
+  margin-top: -24px;
+  font-family: 'Andale Mono', monospace, monospace;
+}
+
 h1 {
-  font-family: 'Courier New', Courier, monospace;
   font-size: 35px;
   text-align: center;
+  padding: 60px;
+  background-image: url('../../Images/sparklySky.gif');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin-bottom: -5px;
 }
+
+.websiteTitleBlock {
+  border: 7px solid transparent;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 295px;
+  height: 75px;
+  padding: 25px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-image: linear-gradient(to right, #f8049c, #ff7600) 1;
+  border-image-slice: 100%;
+  animation: border-animation 4s linear infinite;
+
+}
+
+.websiteTitleWords {
+  position: relative;
+  bottom: 40px;
+  right: 57px;
+  width: 290px;
+  height: 45px;
+  padding: 25px;
+  margin: 0 auto;
+  background-image: linear-gradient(to right, #f8049c, #ff7600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  animation: text-animation 4s linear infinite;
+}
+
+
+/* Animated border */
+@keyframes border-animation {
+  0% {
+    border-image: linear-gradient(to right, #f8049c, #ff7600) 1;
+  }
+
+  50% {
+    border-image: linear-gradient(to right, #00d2ff, #3a7bd5) 1;
+  }
+
+  100% {
+    border-image: linear-gradient(to right, #f8049c, #ff7600) 1;
+  }
+}
+
+/* text-animation */
+@keyframes text-animation {
+  0% {
+    background-image: linear-gradient(to right, #f8049c, #ff7600);
+  }
+
+  50% {
+    background-image: linear-gradient(to right, #00d2ff, #3a7bd5);
+  }
+
+  100% {
+    background-image: linear-gradient(to right, #f8049c, #ff7600);
+  }
+}
+
 
 nav {
   padding: 5px;
@@ -13,23 +89,33 @@ nav {
   border: 1px solid black;
 }
 
+.linkDiv {
+  position: relative;
+  top: 10px;
+  right: 60px;
+}
+
 a,
 a:visited {
   text-decoration: none;
-  box-sizing: border-box;
+  box-sizing: content-box;
   border: 1px solid black;
   padding: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+
+.searchBar {
+  width: 350px;
+  height: 35px;
+  border-radius: 15px;
   margin: 0px 10px 0px 10px;
 }
 
-.searchBar {
-  width: 250px;
-  height: 35px;
-  border-radius: 15px;
-  margin: 0px 10px 0px 100px;
-}
-
 .searchButton {
+  position: relative;
+  top: 2.5px;
   font-size: 25px;
   width: 150px;
   height: 35px;

@@ -5,11 +5,19 @@ import './Navbar.css'
 export default function Navbar() {
   return (
     <header>
-      <h1>Animestagram</h1>
+      <h1>
+        <div className="websiteTitleBlock">
+          <p className="websiteTitleWords">
+            Animestagram
+          </p>
+        </div>
+      </h1>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/sign-out">Sign Out</Link>
+        <div className="linkDiv">
+          <Link to="/" className="linkHome">Home</Link>
+          <Link to="/profile" className="linkProfile">Profile</Link>
+          <Link to="/sign-out" className="linkSignOut">Sign Out</Link>
+        </div>
         <input type="text" className="searchBar" />
         <button className="searchButton">Search</button>
       </nav>
