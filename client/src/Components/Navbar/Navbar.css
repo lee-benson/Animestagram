@@ -20,7 +20,7 @@ h1 {
 
 .websiteTitleBlock {
   border: 7px solid transparent;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
   width: 295px;
   height: 75px;
   padding: 25px;
@@ -81,7 +81,7 @@ h1 {
 
 
 nav {
-  padding: 5px;
+  padding: 15px;
   margin: 5px 0;
   display: flex;
   flex-direction: row;
@@ -91,34 +91,76 @@ nav {
 
 .linkDiv {
   position: relative;
-  top: 10px;
+  top: 15px;
   right: 60px;
 }
 
-a,
-a:visited {
+a {
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: content-box;
-  border: 1px solid black;
   padding: 10px;
   padding-left: 100px;
   padding-right: 100px;
+  margin-left: 15px;
+  border-radius: 15px;
 }
 
+/* Link animations */
+.click:hover .click-slide-show-text1 {
+  margin-left: 65px;
+}
+
+.click-shadow-drop {
+  position: relative;
+  margin-top: 10%;
+  background: rgb(249, 250, 250);
+  padding: 20px;
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out 0s;
+  left: 0px;
+  top: 0px;
+  width: 180px;
+}
+
+.click-shadow-drop:hover {
+  left: 4px;
+  top: 4px;
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+}
+
+.click-shadow-drop--blue {
+  border: 1px solid rgb(58, 134, 255);
+  color: rgb(58, 134, 255);
+  box-shadow: rgb(58, 134, 255) 4px 4px 0px 0px;
+}
 
 .searchBar {
   width: 350px;
-  height: 35px;
-  border-radius: 15px;
+  height: 45px;
+  border-radius: 20px;
   margin: 0px 10px 0px 10px;
+  padding-left: 15px;
+  font-size: 18px;
 }
 
 .searchButton {
   position: relative;
-  top: 2.5px;
-  font-size: 25px;
-  width: 150px;
-  height: 35px;
-  border-radius: 15px;
-  padding: 10;
+  top: -4px;
+  margin-top: 0px;
+  font-size: 20px;
+  width: 215px;
+  height: 55px;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
