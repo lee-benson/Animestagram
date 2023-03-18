@@ -6,6 +6,9 @@ import postRouter from './routes/posts.js'
 import userRouter from './routes/users.js'
 import authRouter from './routes/auth.js'
 import cors from 'cors'
+// import lifecycle from './middleware/lifecycle.js'
+
+
 const PORT = process.env.PORT || 8080;
 
 const app = express()
@@ -18,7 +21,7 @@ app.use('/api/post/', postRouter)
 app.use('/api/user/', userRouter)
 app.use('/api/auth/', authRouter)
 
-// app.use('/api/user/', userRouter)
+
 
 
 app.listen(PORT, () => {

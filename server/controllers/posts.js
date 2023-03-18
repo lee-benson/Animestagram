@@ -32,34 +32,65 @@ export async function GetPostById(req, res) {
 
 
 export async function CreatePost(req, res) {
-  try {
-    const { userID, title, rating, comment } = req.body;
-    const poster = req.user._id;
+  // try {
+  const { title, rating, comment } = req.body;
 
-    // fetch the animeImg using the animeTitle
-    const animeTitle = title;
-    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
+  // fetch the animeImg using the animeTitle
+  const animeTitle = title;
+  const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
 
-    const response = await fetch(apiUrl);
-    const json = await response.json();
-    const animeImg = json.animeImg;
+  const response = await fetch(apiUrl);
+  const json = await response.json();
+  const animeImg = json.animeImg;
 
-    // create the new Post document with animeImg
-    const newPost = await Post.create({
-      userID: userID,
-      title: title,
-      poster: poster,
-      animeImg: animeImg,
-      rating: rating,
-      comment: comment,
-      date: Date.now(),
-    });
+  console.log(apiUrl);
+  console.log(animeImg);
 
-    res.status(201).json(newPost);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: 'NANI?!' });
-  }
+  // create the new Post document with animeImg
+  const newPost = await Post.create({
+    userID: User.userID,
+    title: title,
+    animeImg: animeImg,
+    rating: rating,
+    comment: comment,
+    date: Date.now(),
+  });
+
+  res.status(201).json(newPost);
+  // } catch (error) {
+  //   console.log(error);
+  //   res.status(500).json({ message: 'NANI?!' });
+  // }
 };
 
+// These are place holders The only things that are right as of now are the Names lmao
+export const UpdatePost = async (req, res) => {
+  try {
+    const title = req.params.title
+    const songs = await Song.findOneAndUpdate({ title: title }, { $set: req.body },
+      { new: true })
+    res.status(201).json(songs)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: error.message })
+  }
+}
+
+export const DeletePost = async (req, res) => {
+
+  try {
+    const title = req.params.title
+    const deleted = await Song.findOneAndDelete({ title: title })
+
+
+    if (deleted) {
+      return res.status(200).send('The song has returned to the primordial ooze!')
+    }
+
+    throw new Error('Sorry Dave, I cannot find that song')
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: error.message })
+  }
+}
 
