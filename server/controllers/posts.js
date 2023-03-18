@@ -66,10 +66,10 @@ export async function CreatePost(req, res) {
 // These are place holders The only things that are right as of now are the Names lmao
 export const UpdatePost = async (req, res) => {
   try {
-    const title = req.params.title
-    const songs = await Song.findOneAndUpdate({ title: title }, { $set: req.body },
+    const postID = req.params._id
+    const post = await Post.findOneAndUpdate({ postID: postID }, { $set: req.body },
       { new: true })
-    res.status(201).json(songs)
+    res.status(201).json(post)
   } catch (error) {
     console.error(error)
     res.status(500).json({ error: error.message })
@@ -79,15 +79,15 @@ export const UpdatePost = async (req, res) => {
 export const DeletePost = async (req, res) => {
 
   try {
-    const title = req.params.title
-    const deleted = await Song.findOneAndDelete({ title: title })
+    const postID = req.params._id
+    const deleted = await Post.findOneAndDelete({ postID: postID })
 
 
     if (deleted) {
-      return res.status(200).send('The song has returned to the primordial ooze!')
+      return res.status(200).send('死にたくない')
     }
 
-    throw new Error('Sorry Dave, I cannot find that song')
+    throw new Error('よかった もう一度やってみる')
   } catch (error) {
     console.error(error)
     res.status(500).json({ error: error.message })
