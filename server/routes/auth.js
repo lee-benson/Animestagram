@@ -22,12 +22,10 @@ router.post('/signup', async (req, res) => {
   const user = await User.create({
     username,
     hash,
-    handle: username,
   })
 
   const data = {
     id: user._id,
-    handle: user.handle,
     exp: getExpiration(),
   }
 
@@ -57,7 +55,6 @@ router.post('/signin', async (req, res) => {
 
   const data = {
     id: user._id,
-    handle: user.handle,
     exp: getExpiration(),
   }
 

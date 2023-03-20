@@ -67,7 +67,7 @@ export async function CreatePost(req, res) {
 export const UpdatePost = async (req, res) => {
   try {
     const postID = req.params._id
-    const post = await Post.findOneAndUpdate({ postID: postID }, { $set: req.body },
+    const post = await Post.findOneAndUpdate({ _id: postID }, { $set: req.body },
       { new: true })
     res.status(201).json(post)
   } catch (error) {
@@ -80,7 +80,7 @@ export const DeletePost = async (req, res) => {
 
   try {
     const postID = req.params._id
-    const deleted = await Post.findOneAndDelete({ postID: postID })
+    const deleted = await Post.findOneAndDelete({ _id: postID })
 
 
     if (deleted) {
