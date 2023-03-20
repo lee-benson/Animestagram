@@ -7,5 +7,7 @@ const router = Router()
 router.get('/', postController.GetPosts)
 router.post('/', verifyAuth, postController.CreatePost)
 router.get('/:id', postController.GetPostById)
+router.get('/:id', verifyAuth, postController.DeletePost)
+router.get('/:id', verifyAuth, postController.UpdatePost)
 
 export default router
