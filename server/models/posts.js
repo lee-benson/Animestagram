@@ -10,9 +10,9 @@ const postSchema = new mongoose.Schema({
   title: String,
   animeImg: String,
   rating: {
-    type: "number",
-    "minimum": 0,
-    "maximum": 5
+    type: Number,
+    minimum: 0,
+    maximum: 5
   },
   comment: String,
   date: Date,
