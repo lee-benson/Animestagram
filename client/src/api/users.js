@@ -1,4 +1,4 @@
-import api from "./apiConfig";
+import api from './apiConfig.js';
 
 export async function getProfile(username) {
   const response = await api.get(`/user/${username}`)
