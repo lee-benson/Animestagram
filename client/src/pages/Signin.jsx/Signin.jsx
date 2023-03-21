@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { signin } from '../../api/users'
+import './Signin.css'
 
 export default function Signin() {
   const [text, setText] = useState('')
@@ -15,24 +16,39 @@ export default function Signin() {
 
   return (
     <div>
-      <h1>Sign In</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="signInHead">
+        <div className="websiteTitleBlock">
+          <p className="websiteTitleWords">
+            Sign In
+          </p>
+        </div>
+      </h1>
+      <form className="signInForm" onSubmit={handleSubmit}>
         <input
+          className="signInInput"
           type="text"
+          placeholder="Username"
           value={text}
           onChange={e => setText(e.target.value)}
         />
+        <br></br>
         <input
+          className="signInInput"
           type="password"
+          placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
-        <button>Signin</button>
+        <br></br>
+        <button className="signInButton">Signin</button>
+        <br></br>
       </form>
-      <span>
-        {'Not already a user? '}
+      <span className="signUpLink">
+        {'Not already a user?'}
+        <br></br>
+      </span>
+      <span className="signUpLink">
         <Link to="/auth/signup">Go to Signup</Link>
-        {' instead.'}
       </span>
     </div>
   )
