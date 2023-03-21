@@ -1,4 +1,4 @@
-import api from './apiConfig'
+import api from './apiConfig.js'
 
 export async function getPosts() {
   const response = await api.get('/post/')

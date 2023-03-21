@@ -8,7 +8,8 @@ export default function Signin() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    const response = await signin(text, password)
+    console.log(text.toLowerCase())
+    const response = await signin(text.toLowerCase(), password)
     console.log(response);
   }
 

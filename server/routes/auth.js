@@ -38,31 +38,36 @@ router.post('/signup', async (req, res) => {
 
 router.post('/signin', async (req, res) => {
   // handle user input
-  const { username, password } = req.body
-  // Get user's password hash
-  const user = await User.findOne({ handle: username })
-  const hash = user.hash
+  try {
+    const { username, password } = req.body
+    // Get user's password hash
+    const user = await User.findOne({ username: username })
+    const hash = user.hash
 
-  // Check that the hashes match
-  const result = await bcrypt.compare(password, hash)
-  if (!result) {
-    return res.status(401).json({
-      message: 'Incorrect password'
-    })
+    // Check that the hashes match
+    const result = await bcrypt.compare(password, hash)
+    if (!result) {
+      return res.status(401).json({
+        message: 'Incorrect password'
+      })
+    }
+
+    // Same code as signup from this point onwards
+
+    const data = {
+      id: user._id,
+      exp: getExpiration(),
+    }
+
+    // sign the jwt
+    const token = jwt.sign(data, TOKEN_KEY)
+
+    // return the token
+    return res.json(token)
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
   }
-
-  // Same code as signup from this point onwards
-
-  const data = {
-    id: user._id,
-    exp: getExpiration(),
-  }
-
-  // sign the jwt
-  const token = jwt.sign(data, TOKEN_KEY)
-
-  // return the token
-  return res.json(token)
 })
 
 export default router

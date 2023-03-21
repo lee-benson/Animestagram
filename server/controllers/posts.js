@@ -6,15 +6,25 @@ import jwt from 'jsonwebtoken'
 const TOKEN_KEY = process.env.TOKEN_KEY
 
 export async function GetPosts(req, res) {
-  const posts = await Post.find().populate('userID')
-  return res.json(posts)
+  try {
+    const posts = await Post.find().populate('userID')
+    return res.json(posts)
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
 }
 
-export async function GetPostById(req, res) {
-  const id = req.params.id
-  console.log(id);
-  const post = await Post.findById(id).populate('userID')
-  return res.json(post)
+export async function GetPostByUser(req, res) {
+  try {
+    const username = req.params.username
+    console.log(username);
+    const post = await Post.findOne(username).populate('username')
+    return res.json(post)
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
 }
 
 // export async function CreatePost(req, res) {
@@ -32,42 +42,50 @@ export async function GetPostById(req, res) {
 
 
 export async function CreatePost(req, res) {
-  // try {
   const { title, rating, comment } = req.body;
 
-  // fetch the animeImg using the animeTitle
-  const animeTitle = title;
-  const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
+  try {
+    // fetch the animeImg using the animeTitle
+    const animeTitle = title;
+    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
 
-  const response = await fetch(apiUrl);
-  const json = await response.json();
-  const animeImg = json.animeImg;
+    const response = await fetch(apiUrl);
+    const json = await response.json();
+    const animeImg = json.animeImg;
 
-  console.log(apiUrl);
-  console.log(animeImg);
-
+    console.log(apiUrl);
+    console.log(animeImg);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
   // create the new Post document with animeImg
-  const newPost = await Post.create({
-    userID: User.userID,
-    title: title,
-    animeImg: animeImg,
-    rating: rating,
-    comment: comment,
-    date: Date.now(),
-  });
+  try {
+    const newPost = await Post.create({
+      userID: User.userID,
+      title: title,
+      animeImg: animeImg,
+      rating: rating,
+      comment: comment,
+      date: Date.now(),
+    });
 
-  res.status(201).json(newPost);
-  // } catch (error) {
-  //   console.log(error);
-  //   res.status(500).json({ message: 'NANI?!' });
-  // }
+    User.posts.push(newPost._id)
+    User.save()
+
+
+    res.status(201).json(newPost, userPost);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'NANI?!' });
+  }
 };
 
 // These are place holders The only things that are right as of now are the Names lmao
 export const UpdatePost = async (req, res) => {
   try {
-    const postID = req.params._id
-    const post = await Post.findOneAndUpdate({ _id: postID }, { $set: req.body },
+    const username = req.params.username
+    const post = await Post.findOneAndUpdate({ username: username }, { $set: req.body },
       { new: true })
     res.status(201).json(post)
   } catch (error) {
@@ -79,8 +97,8 @@ export const UpdatePost = async (req, res) => {
 export const DeletePost = async (req, res) => {
 
   try {
-    const postID = req.params._id
-    const deleted = await Post.findOneAndDelete({ _id: postID })
+    const username = req.params.username
+    const deleted = await Post.findOneAndDelete({ username: username })
 
 
     if (deleted) {
