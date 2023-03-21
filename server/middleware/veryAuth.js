@@ -3,13 +3,12 @@ import jwt from 'jsonwebtoken'
 const TOKEN_KEY = process.env.TOKEN_KEY
 
 export default async function verifyAuth(req, res, next) {
-  // extract token from headers
+
   const token = req.headers.authorization
-  // If token doesn't exist, we can return an error
-  console.log(token);
+  console.log(token)
   if (!token) {
     return res.status(401).json({
-      message: 'You must signin first'
+      message: 'Gotta sign in'
     })
   }
 

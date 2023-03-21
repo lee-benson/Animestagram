@@ -47,14 +47,14 @@ export async function CreatePost(req, res) {
   try {
     // fetch the animeImg using the animeTitle
     const animeTitle = title;
-    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
+    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}` || "";
 
     const response = await fetch(apiUrl);
     const json = await response.json();
     const animeImg = json.animeImg;
 
-    console.log(apiUrl);
-    console.log(animeImg);
+    // console.log(apiUrl);
+    // console.log(animeImg);
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error.message });
@@ -64,7 +64,7 @@ export async function CreatePost(req, res) {
     const newPost = await Post.create({
       userID: User.userID,
       title: title,
-      animeImg: animeImg,
+      animeImg: "none",
       rating: rating,
       comment: comment,
       date: Date.now(),

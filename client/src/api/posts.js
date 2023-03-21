@@ -5,9 +5,9 @@ export async function getPosts() {
   return response.data
 }
 
-export async function createPost(username, animeTitle) {
+export async function createPost(title, comment, rating) {
   const response = await api.post('/post/', {
-    username, animeTitle
+    title, rating, comment
   })
   return response.data
 }

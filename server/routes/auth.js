@@ -44,15 +44,13 @@ router.post('/signin', async (req, res) => {
     const user = await User.findOne({ username: username })
     const hash = user.hash
 
-    // Check that the hashes match
+    // Checking that the hashes match
     const result = await bcrypt.compare(password, hash)
     if (!result) {
       return res.status(401).json({
         message: 'Incorrect password'
       })
     }
-
-    // Same code as signup from this point onwards
 
     const data = {
       id: user._id,
