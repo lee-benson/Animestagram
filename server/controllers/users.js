@@ -1,5 +1,5 @@
 import User from '../models/users.js'
-
+import jwt from 'jsonwebtoken'
 
 export async function getProfile(req, res) {
   try {

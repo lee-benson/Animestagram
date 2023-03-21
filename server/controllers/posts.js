@@ -47,14 +47,14 @@ export async function CreatePost(req, res) {
   try {
     // fetch the animeImg using the animeTitle
     const animeTitle = title;
-    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
+    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}` || "";
 
     const response = await fetch(apiUrl);
     const json = await response.json();
     const animeImg = json.animeImg;
 
-    console.log(apiUrl);
-    console.log(animeImg);
+    // console.log(apiUrl);
+    // console.log(animeImg);
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error.message });
@@ -64,7 +64,7 @@ export async function CreatePost(req, res) {
     const newPost = await Post.create({
       userID: User.userID,
       title: title,
-      animeImg: animeImg,
+      animeImg: "none",
       rating: rating,
       comment: comment,
       date: Date.now(),
@@ -84,8 +84,10 @@ export async function CreatePost(req, res) {
 // These are place holders The only things that are right as of now are the Names lmao
 export const UpdatePost = async (req, res) => {
   try {
-    const username = req.params.username
-    const post = await Post.findOneAndUpdate({ username: username }, { $set: req.body },
+    const decodedToken = jwt.verify(req.token, TOKEN_KEY);
+    const username = await User.findById(decodedToken.username);
+    const title = req.params.title
+    const post = await Post.findOneAndUpdate({ username: username.username, title: title }, { $set: req.body },
       { new: true })
     res.status(201).json(post)
   } catch (error) {
@@ -97,18 +99,18 @@ export const UpdatePost = async (req, res) => {
 export const DeletePost = async (req, res) => {
 
   try {
-    const username = req.params.username
-    const deleted = await Post.findOneAndDelete({ username: username })
-
-
-    if (deleted) {
-      return res.status(200).send('死にたくない')
+    const decodedToken = jwt.verify(req.token, TOKEN_KEY);
+    const user = await User.findById(decodedToken.username);
+    const post = await Post.findOneAndDelete({ title: req.params.title, username: user.username });
+    if (!post) {
+      return res.status(404).json({ message: 'よかった もう一度やってみる' });
     }
-
-    throw new Error('よかった もう一度やってみる')
+    res.json({ message: '死にたくない' });
   } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: error.message })
+    console.error(error);
+    res.status(500).json({ message: error.message });
   }
+
 }
+
 
