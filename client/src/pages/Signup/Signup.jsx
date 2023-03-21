@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react"
 import { signup } from "../../api/users";
+import './Signup.css'
 
 export default function Signup() {
   const [text, setText] = useState('')
@@ -14,24 +15,38 @@ export default function Signup() {
 
   return (
     <div>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="signUpHead">
+        <div className="websiteTitleBlock">
+          <p className="websiteTitleWords">
+            Sign Up
+          </p>
+        </div></h1>
+      <form className='signUpForm' onSubmit={handleSubmit}>
         <input
+          className='signUpInput'
           type="text"
+          placeholder='Username'
           value={text}
           onChange={e => setText(e.target.value)}
         />
+        <br></br>
         <input
+          className='signUpInput'
           type="password"
+          placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
-        <button>Signup</button>
+        <br></br>
+        <button className="signUpButton">Signup</button>
+        <br></br>
       </form>
-      <span>
+      <span className="signInLink">
         {'Already have an account? '}
+        <br></br>
+      </span>
+      <span className='signInLink'>
         <Link to="/auth/signin">Go to Signin</Link>
-        {' instead.'}
       </span>
     </div>
   )

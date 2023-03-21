@@ -1,4 +1,4 @@
-.signUpHead {
+.signInHead {
   font-size: 35px;
   text-align: center;
   padding: 60px;
@@ -19,7 +19,7 @@
   justify-content: center;
 } */
 
-.signUpInput {
+.signInInput {
   display: flex;
   text-align: center;
   max-width: 35%;
@@ -28,12 +28,12 @@
   margin: auto;
 }
 
-.signUpButton {
+.signInButton {
   display: flex;
   margin: auto;
 }
 
-.signInLink {
+.signUpLink {
   display: flex;
   /* margin: auto; */
   justify-content: center;
