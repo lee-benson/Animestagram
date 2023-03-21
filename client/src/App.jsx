@@ -3,23 +3,22 @@ import HomePost from './Components/HomePost/HomePost.jsx'
 import NewPost from './Components/NewPost/NewPost.jsx'
 import Navbar from './Components/Navbar/Navbar.jsx'
 import Profile from './pages/Profile/Profile.jsx'
-import Signin from './pages/Signin.jsx/Signin.jsx'
+import Signin from './pages/Signin/Signin.jsx'
 import Signup from './pages/Signup/Signup.jsx'
 import './App.css';
+
 
 
 function App() {
   return (
     <>
-      {/* <Signin />
-      <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Signin />}></Route>
-        <Route home='/' element={<HomePost />} />
-        <Route path="/:username" element={<Profile />}></Route>
-        <Route path="/new" element={<NewPost />}></Route>
-        <Route path="/auth/signup" element={<Signup />}></Route>
-        <Route path="/auth/signin" element={<Signin />}></Route>
+        <Route path="/" element={<Signin />} />
+        <Route path="/post" element={<HomePost />} />
+        <Route path="/:username" element={<Profile />} />
+        <Route path="/new" element={<NewPost />} />
+        <Route path="/auth/signup" element={<Signup />} />
+        <Route path="/auth/signin" element={<Signin />} />
       </Routes>
     </>
   );

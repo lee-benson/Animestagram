@@ -16,7 +16,6 @@ const myself = await User.findOne({
 console.log(myself)
 
 
-
 await Post.insertMany([{
   comment: "I love you Handler One",
   date: new Date(),
