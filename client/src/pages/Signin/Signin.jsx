@@ -1,21 +1,20 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { signin } from '../../api/users'
 import './Signin.css'
 
 export default function Signin() {
   const [text, setText] = useState('')
   const [password, setPassword] = useState('')
-  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault()
     console.log(text.toLowerCase())
     const response = await signin(text.toLowerCase(), password)
-    console.log(response);
+    console.log(response.status);
     // redirect to home on successful login please
     if (response.status === 200) {
-      navigate('/post')
+      window.location.assign("/post")
     }
   }
 

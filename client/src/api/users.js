@@ -14,8 +14,8 @@ export async function signin(username, password) {
   console.log({ username });
   console.log({ password });
   localStorage.setItem(LOCALSTORAGE_KEY, response.data)
-
-  return response.data
+  console.log(response);
+  return response
 }
 export async function signup(username, password) {
   const response = await api.post('/auth/signup', {

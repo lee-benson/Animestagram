@@ -46,7 +46,7 @@ export default function Signup() {
         <br></br>
       </span>
       <span className='signInLink'>
-        <Link to="/auth/signin">Go to Signin</Link>
+        <Link to="/">Go to Signin</Link>
       </span>
     </div>
   )
