@@ -10,10 +10,12 @@ const api = axios.create({
   }
 })
 
-// api.interceptors.request.use(config => {
-//   const token = localStorage.getItem(LOCALSTORAGE_KEY)
-//   config.headers.Authorization = token
-//   return config
-// })
+
+
+api.interceptors.request.use(config => {
+  const token = localStorage.getItem(LOCALSTORAGE_KEY)
+  config.headers.Authorization = token
+  return config
+})
 
 export default api

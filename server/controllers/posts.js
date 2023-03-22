@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import Post from '../models/posts.js'
 import User from '../models/users.js'
 import jwt from 'jsonwebtoken'
+import mongoose from 'mongoose';
 
 const TOKEN_KEY = process.env.TOKEN_KEY
 
@@ -41,44 +42,42 @@ export async function GetPostByUser(req, res) {
 
 
 
-export async function CreatePost(req, res) {
+export async function CreatePost(req, res,) {
+
   const { title, rating, comment } = req.body;
   const id = req.params.username
   console.log(id);
   try {
     // fetch the animeImg using the animeTitle
     const animeTitle = title;
-    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}` || "";
+    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
 
     const response = await fetch(apiUrl);
-    const json = await response.json();
-    const animeImg = json.animeImg;
+    const data = await response.json();
+    const img = data[0].animeImg;
+    console.log(img)
 
-    // console.log(apiUrl);
-    // console.log(animeImg);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: error.message });
-  }
-  // create the new Post document with animeImg
-  try {
-    const newPost = await Post.create({
-      userID: User.userID,
-      title: title,
-      animeImg: "none",
-      rating: rating,
-      comment: comment,
+    let id = req.id
+
+    const user = await User.findById(id)
+    console.log(user)
+    const newPost = await Post.insertMany({
+      userID: id,
+      title,
+      img: img,
+      rating,
+      comment,
       date: Date.now(),
     });
 
-    User.posts.push(newPost._id)
-    User.save()
+    user.posts.push(newPost._id)
+    user.save()
+    console.log(newPost)
 
 
-    res.status(201).json(newPost, userPost);
+    res.status(201).json(newPost);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: 'NANI?!' });
   }
 };
 
@@ -97,21 +96,19 @@ export const UpdatePost = async (req, res) => {
   }
 }
 
-export const DeletePost = async (req, res) => {
 
+export async function DeletePost(req, res) {
+  const title = req.params.title;
   try {
-    const decodedToken = jwt.verify(req.token, TOKEN_KEY);
-    const user = await User.findById(decodedToken.username);
-    const post = await Post.findOneAndDelete({ title: req.params.title, username: user.username });
-    if (!post) {
-      return res.status(404).json({ message: 'よかった もう一度やってみる' });
-    }
-    res.json({ message: '死にたくない' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: error.message });
+    await Post.findOneAndDelete({ title: title });
+    res.status(200).json({ message: "Post deleted successfully" });
   }
-
+  catch (err) {
+    res.status(404).json({ message: err.message });
+  }
 }
+
+
+
 
 

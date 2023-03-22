@@ -21,7 +21,7 @@ await Post.insertMany([{
   date: new Date(),
   userID: myself.id,
   title: "86",
-  poster: "https://gogocdn.net/cover/86.png",
+  img: "https://gogocdn.net/cover/86.png",
   rating: 5,
 },
 {
@@ -29,7 +29,7 @@ await Post.insertMany([{
   date: new Date(),
   userID: myself.id,
   title: "One Piece",
-  poster: "https://gogocdn.net/images/anime/One-piece.jpg",
+  img: "https://gogocdn.net/images/anime/One-piece.jpg",
   rating: 1,
 }]).then((posts) => {
   myself.posts = posts.map(post => post._id)

@@ -6,21 +6,19 @@ function PostForm() {
   const [rating, setRating] = useState({});
   const [comment, setComment] = useState("");
 
-  let userHash = localStorage.getItem("token")
-
-  console.log(userHash);
   const handleSubmit = (event) => {
     event.preventDefault();
 
     console.log(title, rating, comment);
 
+    //search db with user
+
+
     createPost({
       title,
       rating,
       comment,
-    }
-
-    )
+    })
 
   };
 
