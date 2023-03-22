@@ -5,22 +5,31 @@ function PostForm() {
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState({});
   const [comment, setComment] = useState("");
+  // const [userID, setUserID] = useState("")
 
-  let userHash = localStorage.getItem("token")
+  // setUserID(async (username) => {
+  //   const res = await fetch(`http://localhost:8080/api/user/${username}`)
+  //   const data = await res.json();
+  //   if (data.length > 0) {
+  //     return data[0]._id;
+  //   } else {
+  //     throw new Error('User not found');
+  //   }
+  // });
 
-  console.log(userHash);
   const handleSubmit = (event) => {
     event.preventDefault();
 
     console.log(title, rating, comment);
 
+    //search db with user
+
+
     createPost({
       title,
       rating,
       comment,
-    }
-
-    )
+    })
 
   };
 
