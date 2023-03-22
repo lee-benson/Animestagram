@@ -14,7 +14,12 @@ export default async function verifyAuth(req, res, next) {
 
   // verify token and extra the user's info
   const data = jwt.verify(token, TOKEN_KEY)
+  console.log(data)
 
-  req.id = data.id
+  const { id } = data
+  console.log(id)
+  req.id = id
+
+
   next()
 }

@@ -7,7 +7,6 @@ const UpDelForm = () => {
   const [title, setTitle] = useState('');
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
-  const [username, setUsername] = useState('');
 
   const handleDeletePost = () => {
     axios.delete(`http://localhost:8080/api/post/${title}/`)

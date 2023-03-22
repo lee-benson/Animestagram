@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
   },
   title: String,
-  animeImg: String,
+  img: String,
   rating: {
     type: Number,
     minimum: 0,
