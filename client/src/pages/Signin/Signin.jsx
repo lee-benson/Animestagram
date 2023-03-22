@@ -30,7 +30,7 @@ export default function Signin() {
       </h1>
       <form className="signInForm" onSubmit={handleSubmit}>
         <input
-          className="signInInput"
+          className="signInInput searchBar"
           type="text"
           placeholder="Username"
           value={text}
@@ -38,14 +38,14 @@ export default function Signin() {
         />
         <br></br>
         <input
-          className="signInInput"
+          className="signInInput searchBar"
           type="password"
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
         <br></br>
-        <button className="signInButton">Signin</button>
+        <button className="signInButton click-shadow-drop click-shadow-drop--blue">Signin</button>
         <br></br>
       </form>
       <span className="signUpLink">
