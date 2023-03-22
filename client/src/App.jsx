@@ -18,7 +18,7 @@ function App() {
         <Route path="/:username" element={<Profile />} />
         <Route path="/new" element={<NewPost />} />
         <Route path="/auth/signup" element={<Signup />} />
-        <Route path="/auth/signin" element={<Signin />} />
+        <Route path="/" element={<Signin />} />
       </Routes>
     </>
   );
