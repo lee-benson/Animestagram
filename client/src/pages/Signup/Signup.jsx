@@ -23,7 +23,7 @@ export default function Signup() {
         </div></h1>
       <form className='signUpForm' onSubmit={handleSubmit}>
         <input
-          className='signUpInput'
+          className='signUpInput searchBar'
           type="text"
           placeholder='Username'
           value={text}
@@ -31,14 +31,14 @@ export default function Signup() {
         />
         <br></br>
         <input
-          className='signUpInput'
+          className='signUpInput searchBar'
           type="password"
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
         <br></br>
-        <button className="signUpButton">Signup</button>
+        <button className="signUpButton click-shadow-drop click-shadow-drop--blue">Signup</button>
         <br></br>
       </form>
       <span className="signInLink">

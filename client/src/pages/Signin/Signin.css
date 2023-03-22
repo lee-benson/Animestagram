@@ -1,0 +1,43 @@
+.signInHead {
+  font-size: 35px;
+  text-align: center;
+  padding: 60px;
+  /* background-image: url('../../Images/akirabackground.jpg'); */
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin-bottom: 15px;
+}
+
+/* .signInForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.signInInput {
+  display: flex;
+  text-align: center;
+  max-width: 50%;
+  min-width: 50%;
+  justify-content: center;
+  margin: auto;
+}
+
+.signInButton {
+  display: flex;
+  margin: auto;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.signUpLink {
+  display: flex;
+  /* margin: auto; */
+  justify-content: center;
+  text-align: center;
+}
