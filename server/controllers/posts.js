@@ -43,7 +43,8 @@ export async function GetPostByUser(req, res) {
 
 export async function CreatePost(req, res) {
   const { title, rating, comment } = req.body;
-
+  const id = req.params.username
+  console.log(id);
   try {
     // fetch the animeImg using the animeTitle
     const animeTitle = title;

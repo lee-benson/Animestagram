@@ -8,7 +8,6 @@ import authRouter from './routes/auth.js'
 import cors from 'cors'
 // import lifecycle from './middleware/lifecycle.js'
 
-
 const PORT = process.env.PORT || 8080;
 
 const app = express()
@@ -20,9 +19,6 @@ app.use(morgan('dev'))
 app.use('/api/post/', postRouter)
 app.use('/api/user/', userRouter)
 app.use('/api/auth/', authRouter)
-
-
-
 
 app.listen(PORT, () => {
   console.log(`This bih is running on http://localhost:${PORT} type beat`);
