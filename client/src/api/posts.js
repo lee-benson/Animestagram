@@ -8,12 +8,14 @@ export async function getPosts() {
 
 
 export async function createPost(title, comment, rating) {
- 
 
-  const response = await api.post(`/post`, 
+
+  const response = await api.post(`/post`,
     title,
     rating,
     comment
   )
   return response.data
 }
+
+export const DeletePost = title => api.delete(`/post/${title}`);

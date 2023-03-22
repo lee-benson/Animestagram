@@ -96,21 +96,19 @@ export const UpdatePost = async (req, res) => {
   }
 }
 
-export const DeletePost = async (req, res) => {
 
+export async function DeletePost(req, res) {
+  const title = req.params.title;
   try {
-    const decodedToken = jwt.verify(req.token, TOKEN_KEY);
-    const user = await User.findById(decodedToken.username);
-    const post = await Post.findOneAndDelete({ title: req.params.title, username: user.username });
-    if (!post) {
-      return res.status(404).json({ message: 'よかった もう一度やってみる' });
-    }
-    res.json({ message: '死にたくない' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: error.message });
+    await Post.findOneAndDelete({ title: title });
+    res.status(200).json({ message: "Post deleted successfully" });
   }
-
+  catch (err) {
+    res.status(404).json({ message: err.message });
+  }
 }
+
+
+
 
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { DeletePost } from '../../api/posts.js';
 
 
 
@@ -9,15 +10,8 @@ const UpDelForm = () => {
   const [comment, setComment] = useState('');
 
   const handleDeletePost = () => {
-    axios.delete(`http://localhost:8080/api/post/${title}/`)
-      .then(response => {
-        console.log(response);
-        // handle successful deletion
-      })
-      .catch(error => {
-        console.log(error);
-        // handle error
-      });
+
+    DeletePost(title)
   };
 
   const handleUpdatePost = () => {
@@ -37,7 +31,6 @@ const UpDelForm = () => {
   return (
     <div>
       <label htmlFor="title">Title:</label>
-
       <input type="text" id="title" value={title}
         onChange={e => setTitle(e.target.value)} />
       <label htmlFor="rating">Rating:</label>
@@ -46,9 +39,6 @@ const UpDelForm = () => {
       <label htmlFor="comment">Comment:</label>
       <textarea id="comment" value={comment}
         onChange={e => setComment(e.target.value)}></textarea>
-      <label htmlFor="username">Username:</label>
-      <input type="text" id="username" value={username}
-        onChange={e => setUsername(e.target.value)} />
       <button onClick={handleDeletePost}>Delete Post</button>
       <button onClick={handleUpdatePost}>Update Post</button>
     </div>
