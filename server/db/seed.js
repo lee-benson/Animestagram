@@ -31,7 +31,24 @@ await Post.insertMany([{
   title: "One Piece",
   img: "https://gogocdn.net/images/anime/One-piece.jpg",
   rating: 1,
-}]).then((posts) => {
+},
+{
+  comment: "Honestly the GOAT, can't be beat",
+  date: new Date(),
+  userID: myself.id,
+  title: "Yu Yu Hakusho",
+  img: "https://gogocdn.net/images/anime/Y/yu-yu-hakusho.jpg",
+  rating: 5,
+},
+{
+  comment: "It's basically Code Geauss, Home boy pretends to be a threat to the world in an attempt to save it, seems cool",
+  date: new Date(),
+  userID: myself.id,
+  title: "Attack on Titan",
+  img: "https://gogocdn.net/images/anime/Shingeki-no-Kyojin.jpg",
+  rating: 4,
+}
+]).then((posts) => {
   myself.posts = posts.map(post => post._id)
   myself.save()
 })
