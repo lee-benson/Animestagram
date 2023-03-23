@@ -28,18 +28,6 @@ export async function GetPostByUser(req, res) {
   }
 }
 
-// export async function CreatePost(req, res) {
-//   const { comment } = req.body
-//   // const user = await User.findOne({ handle: username })
-//   const newPost = await Post.create({
-//     username: req.id,
-//     date: new Date(),
-//     text: comment,
-//   })
-//   return res.json(newPost)
-// }
-
-
 
 
 export async function CreatePost(req, res,) {
@@ -49,6 +37,7 @@ export async function CreatePost(req, res,) {
   console.log(id);
   try {
     // fetch the animeImg using the animeTitle
+
     const animeTitle = title;
     const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
 
@@ -58,6 +47,8 @@ export async function CreatePost(req, res,) {
     console.log(img)
 
     let id = req.id
+
+
 
     const user = await User.findById(id)
     console.log(user)
