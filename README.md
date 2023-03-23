@@ -144,8 +144,7 @@ getAnime('naruto')
 
 - [] Navigation bar which has a homepage, profile page, and search bar (search bar interface).
 - [] Component that displays username, anime title, and rating. Below the image, comment, and other users' comments are rendered. 
-- [] On the profile page, there is a sticky footer with the functionality of making a new post. 
-- [] On the profile page, the component which displays the review also has an editing/deleting component.
+- [] On the profile page, the component displayes the review.
 - [] Routes/links to the aforementioned components.
 
 ### POST MVP: 
