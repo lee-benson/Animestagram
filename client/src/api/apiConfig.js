@@ -4,7 +4,7 @@ const LOCALSTORAGE_KEY = 'token'
 
 
 const api = axios.create({
-  baseURL: 'http://localhost:8080/api/',
+  baseURL: 'https://animestagram-back.vercel.app/api/',
   headers: {
     Authorization: localStorage.getItem(LOCALSTORAGE_KEY)
   }
