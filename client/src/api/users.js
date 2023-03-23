@@ -8,7 +8,7 @@ export async function getProfile(username) {
 const LOCALSTORAGE_KEY = 'token'
 
 export async function signin(username, password) {
-  const response = await api.post('/auth/signin', {
+  const response = await api.post('/', {
     username, password
   })
   console.log({ username });
