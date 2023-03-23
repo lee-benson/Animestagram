@@ -9,7 +9,7 @@ import mongoose from 'mongoose'
 // await User.deleteMany()
 await Post.deleteMany()
 
-const myself = await User.findOne({
+const myself = new User({
   username: "test2"
 })
 
