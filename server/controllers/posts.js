@@ -81,7 +81,7 @@ export async function CreatePost(req, res,) {
   }
 };
 
-// These are place holders The only things that are right as of now are the Names lmao
+
 export const UpdatePost = async (req, res) => {
   try {
     const decodedToken = jwt.verify(req.token, TOKEN_KEY);
