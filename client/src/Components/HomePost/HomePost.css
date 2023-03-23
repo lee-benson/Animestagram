@@ -4,3 +4,24 @@
   border: 1px solid black;
   display: flex;
 }
+
+.username {
+  width: 40%;
+  height: 40%;
+  border: 1px solid black;
+  display: flex;
+}
+
+.image {
+  width: 40%;
+  height: 40%;
+  border: 1px solid black;
+  display: flex;
+}
+
+/* .homePosts {
+  width: 40%;
+  height: 40%;
+  border: 1px solid black;
+  display: flex;
+} */
