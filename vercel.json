@@ -4,11 +4,5 @@
       "source": "/api/(.*)",
       "destination": "/api"
     }
-  ],
-  "build": {
-    "env": {
-      "DATABASE_URL": "mongodb+srv://bensonl1334:F4rQvNNnI2nhQIm6@cluster0.hcurnn6.mongodb.net/test"
-    },
-    "command": "npm run seed && next build"
-  }
+  ]
 }
