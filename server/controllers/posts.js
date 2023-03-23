@@ -28,18 +28,6 @@ export async function GetPostByUser(req, res) {
   }
 }
 
-// export async function CreatePost(req, res) {
-//   const { comment } = req.body
-//   // const user = await User.findOne({ handle: username })
-//   const newPost = await Post.create({
-//     username: req.id,
-//     date: new Date(),
-//     text: comment,
-//   })
-//   return res.json(newPost)
-// }
-
-
 
 
 export async function CreatePost(req, res,) {
@@ -49,15 +37,19 @@ export async function CreatePost(req, res,) {
   console.log(id);
   try {
     // fetch the animeImg using the animeTitle
-    const animeTitle = title;
-    const apiUrl = `https://gogoanime.consumet.stream/search?keyw=${animeTitle}`;
+
+    // const animeTitle = title;
+    const apiUrl = `https://kitsu.io/api/edge/anime?filter[text]=${title}&page[limit]=1`;
 
     const response = await fetch(apiUrl);
     const data = await response.json();
-    const img = data[0].animeImg;
+    const anime = data.data[0]
+    const img = anime.attributes.posterImage.medium;
     console.log(img)
 
     let id = req.id
+
+
 
     const user = await User.findById(id)
     console.log(user)
@@ -81,7 +73,7 @@ export async function CreatePost(req, res,) {
   }
 };
 
-// These are place holders The only things that are right as of now are the Names lmao
+
 export const UpdatePost = async (req, res) => {
   try {
     const decodedToken = jwt.verify(req.token, TOKEN_KEY);
