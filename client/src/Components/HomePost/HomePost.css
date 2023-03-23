@@ -1,6 +1,36 @@
 .homePostsTrio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 40%;
+  border: 1px solid black;
+}
+
+.username {
   width: 40%;
   height: 40%;
   border: 1px solid black;
   display: flex;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.comments {
+  width: 40%;
+  height: 40%;
+  border: 1px solid black;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.homePosts {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }

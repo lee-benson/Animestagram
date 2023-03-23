@@ -13,12 +13,9 @@ export default function Navbar() {
         </div>
       </h1>
       <nav>
-        {/* <div className="linkDiv"> */}
-
         <Link to="/post" className="linkFormat linkHome navLink click-shadow-drop click-shadow-drop--blue">Home</Link>
         <Link to="/profile" className="linkFormat linkProfile navLink click-shadow-drop click-shadow-drop--blue">Profile</Link>
         <Link to="/" className="linkFormat linkSignOut navLink click-shadow-drop click-shadow-drop--blue">Sign Out</Link>
-        {/* </div> */}
         {/* <input type="text" placeholder="Type Anime Name" className="searchBar" />
         <button className="searchButton click-shadow-drop click-shadow-drop--blue">Search</button> */}
       </nav>
