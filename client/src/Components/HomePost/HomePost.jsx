@@ -30,9 +30,9 @@ export default function HomePost() {
             <div className="rating">{post.rating}</div>
           </div>
           <div className="image">
-            <img src={post.image} alt={post.title} />
+            <img src={post.img} alt={post.title} />
           </div>
-          <div className="comments">{post.comments}</div>
+          <div className="comments">{post.comment}</div>
         </div>
       ))}
     </>

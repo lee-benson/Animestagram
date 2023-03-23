@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createPost } from "../../api/posts";
+import './NewPost.css'
 
 function PostForm() {
   const [title, setTitle] = useState("");
@@ -23,11 +24,12 @@ function PostForm() {
   };
 
   return (
-    <div>
-
-      <form onSubmit={handleSubmit}>
+    <div className="profileDiv">
+      <form
+        onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input
+          className="newPostInput"
           type="text"
           id="title"
           value={title}
@@ -35,6 +37,7 @@ function PostForm() {
         />
         <label htmlFor="rating">Rating:</label>
         <input
+          className="newPostInput"
           type="number"
           id="rating"
           value={rating}
@@ -42,11 +45,14 @@ function PostForm() {
         />
         <label htmlFor="comment">Comment:</label>
         <textarea
+          className="newPostText"
           id="comment"
           value={comment}
           onChange={(event) => setComment(event.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button
+          className="newPostButton"
+          type="submit">Submit</button>
       </form>
     </div>
   );
