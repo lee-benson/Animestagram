@@ -83,9 +83,7 @@ getAnime('naruto')
 
 <img width="997" alt="Screenshot 2023-03-16 at 4 03 55 PM" src="https://user-images.githubusercontent.com/114048369/225740402-aea6a81d-d4c1-4982-8187-e4cfefc95680.png">
 
-<img width="1200" alt="Screenshot 2023-03-16 at 3 49 14 PM" src="https://user-images.githubusercontent.com/114048369/225740521-d19d7f0a-53aa-48e4-be13-585b19430bba.png">
-
-<img width="997" alt="Screenshot 2023-03-16 at 3 50 36 PM" src="https://user-images.githubusercontent.com/114048369/225740545-2572bbb6-3691-4571-8671-3186d2cc8b72.png">
+<img width="1114" alt="Screenshot 2023-03-23 at 10 17 02 AM" src="https://user-images.githubusercontent.com/114048369/227234443-412a4a79-571c-4b39-a35c-e3e6f104117a.png">
 
 
 ## MVP:
