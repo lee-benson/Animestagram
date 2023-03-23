@@ -1,0 +1,34 @@
+.newPostInput {
+  display: flex;
+  text-align: center;
+  max-width: 50%;
+  min-width: 50%;
+  justify-content: center;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.newPostButton {
+  display: flex;
+  margin: auto;
+  border-radius: 20px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.profileDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: "1000px";
+}
+
+.newPostText {
+  display: flex;
+  max-width: 70%;
+  min-width: 70%;
+  justify-content: center;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}

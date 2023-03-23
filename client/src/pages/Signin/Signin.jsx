@@ -27,7 +27,7 @@ export default function Signin() {
           </p>
         </div>
       </h1>
-      <form className="signInForm" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           className="signInInput searchBar"
           type="text"

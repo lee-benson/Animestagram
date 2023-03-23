@@ -13,14 +13,14 @@ export default function Navbar() {
         </div>
       </h1>
       <nav>
-        <div className="linkDiv">
-          <Link to="/post" className="linkHome navLink click-shadow-drop click-shadow-drop--blue">Home</Link>
-          <Link to="/profile" className="linkProfile navLink click-shadow-drop click-shadow-drop--blue">Profile</Link>
-          <Link to="/auth/signin" className="linkSignOut navLink click-shadow-drop click-shadow-drop--blue">Sign Out</Link>
-        </div>
-        <input type="text" placeholder="Type Anime Name" className="searchBar" />
-        <button className="searchButton click-shadow-drop click-shadow-drop--blue">Search</button>
+        {/* <div className="linkDiv"> */}
+        <Link to="/" className="linkHome navLink click-shadow-drop click-shadow-drop--blue">Home</Link>
+        <Link to="/profile" className="linkProfile navLink click-shadow-drop click-shadow-drop--blue">Profile</Link>
+        <Link to="/sign-out" className="linkSignOut navLink click-shadow-drop click-shadow-drop--blue">Sign Out</Link>
+        {/* </div> */}
+        {/* <input type="text" placeholder="Type Anime Name" className="searchBar" />
+        <button className="searchButton click-shadow-drop click-shadow-drop--blue">Search</button> */}
       </nav>
-    </header>
+    </header >
   )
 }
