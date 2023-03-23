@@ -25,7 +25,7 @@ export default function HomePost() {
       {posts.map((post) => (
         <div className="homePosts" key={post.id}>
           <div className="homePostsTrio">
-            <div className="username">{post.username}</div>
+            <div className="username">{post.userID.username}</div>
             <div className="title">{post.title}</div>
             <div className="rating">{post.rating}</div>
           </div>
