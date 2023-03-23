@@ -26,8 +26,8 @@ export default function HomePost() {
         <div className="homePosts" key={post.id}>
           <div className="homePostsTrio">
             <div className="username">{post.userID.username}</div>
-            <div className="title">{post.title}</div>
-            <div className="rating">{post.rating}</div>
+            <div className="username">{post.rating}</div>
+            <div className="username">{post.title}</div>
           </div>
           <div className="image">
             <img src={post.img} alt={post.title} />
