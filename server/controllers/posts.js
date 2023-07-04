@@ -16,6 +16,7 @@ export async function GetPosts(req, res) {
   }
 }
 
+
 export async function GetPostByUser(req, res) {
   try {
     const username = req.params.username
@@ -74,6 +75,7 @@ export async function CreatePost(req, res,) {
 };
 
 
+
 export const UpdatePost = async (req, res) => {
   try {
     const decodedToken = jwt.verify(req.token, TOKEN_KEY);
@@ -87,6 +89,8 @@ export const UpdatePost = async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 }
+
+
 
 
 export async function DeletePost(req, res) {
